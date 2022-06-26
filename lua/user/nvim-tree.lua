@@ -139,3 +139,8 @@ nvim_tree.setup {
     relativenumber = false,
   },
 }
+
+-- vim.api.nvim_set_keymap('n', '<leader>1', ':NvimTreeToggle<CR>', {
+--   noremap = true,
+--   silent = true,
+-- })
