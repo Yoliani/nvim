@@ -103,9 +103,9 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "copilot" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
+    { name = "copilot" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "cmp_tabnine" },
