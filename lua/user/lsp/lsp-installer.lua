@@ -18,7 +18,8 @@ local servers = {
   "bashls",
   "clangd",
   "rust_analyzer",
-  "taplo"
+  "taplo",
+  "solargraph"
 }
 
 local settings = {
@@ -86,6 +87,11 @@ for _, server in pairs(servers) do
 
   if server == "solc" then
     local solc_opts = require "user.lsp.settings.solc"
+    opts = vim.tbl_deep_extend("force", solc_opts, opts)
+  end
+
+  if server == "solargraph" then
+    local solc_opts = require "user.lsp.settings.solargraph"
     opts = vim.tbl_deep_extend("force", solc_opts, opts)
   end
 
