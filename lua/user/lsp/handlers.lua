@@ -85,6 +85,8 @@ M.on_attach = function(client, bufnr)
     end
     M.capabilities.textDocument.completion.completionItem.snippetSupport = false
     vim.lsp.codelens.refresh()
+  elseif client.name == "eslint" then
+     client.server_capabilities.document_formatting = true
   else
     local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
     if not status_cmp_ok then
@@ -103,7 +105,7 @@ function M.enable_format_on_save()
   vim.cmd [[
     augroup format_on_save
       autocmd! 
-      autocmd BufWritePre * lua vim.lsp.buf.format({ async = true }) 
+      autocmd BufWritePre * lua javascript vim.lsp.buf.format({ async = true }) 
     augroup end
   ]]
   vim.notify "Enabled format on save"
