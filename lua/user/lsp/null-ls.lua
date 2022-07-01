@@ -11,7 +11,7 @@ local diagnostics = null_ls.builtins.diagnostics
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 -- npm install --save-dev prettier prettier-plugin-solidity
 null_ls.setup {
-  debug = false,
+  debug = true,
   sources = {
     formatting.prettier.with {
       extra_filetypes = { "toml", "solidity" },
@@ -20,5 +20,6 @@ null_ls.setup {
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
     formatting.google_java_format,
+    formatting.rubocop,
   },
 }

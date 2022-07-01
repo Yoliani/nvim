@@ -6,3 +6,5 @@ if not status_ok then
   vim.notify("colorscheme " .. colorscheme .. " not found!")
   return
 end
+
+if colorscheme == 'onedarkpro' then require("onedarkpro").load() end

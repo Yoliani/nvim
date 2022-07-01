@@ -100,6 +100,7 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use 'olimorris/onedarkpro.nvim'
   -- use "rebelot/kanagawa.nvim"
+  use "ellisonleao/gruvbox.nvim"
 
   -- cmp plugins
   -- use "hrsh7th/nvim-cmp" -- The completion plugin
