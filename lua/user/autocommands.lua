@@ -103,3 +103,13 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
     end
   end,
 })
+
+vim.api.nvim_create_augroup("_ruby", { clear = true })
+
+-- Set Active Admin .arb files to be ruby files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = "_ruby",
+  pattern = "*.html.arb,*.html.slim,*.html.erb",
+  callback = function() vim.cmd("setfiletype ruby") end,
+})
+

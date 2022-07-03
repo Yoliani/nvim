@@ -13,7 +13,25 @@ telescope.setup {
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
-    file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
+    file_ignore_patterns = {
+      ".git/",
+      "node_modules/",
+      "target/",
+      "docs/",
+      ".settings/",
+      "%.csv",
+      -- "%.jpg",
+      -- "%.jpeg",
+      -- "%.png",
+      -- "%.svg",
+      "%.otf",
+      "%.ttf",
+      "%.lock",
+      "__pycache__/*",
+      "%.sqlite3",
+      "%.ipynb",
+      "vendor/*",
+    },
 
     mappings = {
       i = {
@@ -100,4 +118,3 @@ telescope.setup {
     },
   },
 }
-
