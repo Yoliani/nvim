@@ -98,7 +98,7 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  use 'olimorris/onedarkpro.nvim'
+  use "olimorris/onedarkpro.nvim"
   -- use "rebelot/kanagawa.nvim"
   use "ellisonleao/gruvbox.nvim"
 
@@ -106,7 +106,6 @@ return packer.startup(function(use)
   -- use "hrsh7th/nvim-cmp" -- The completion plugin
   use {
     "hrsh7th/nvim-cmp",
-    -- commit = "dbc72290295cfc63075dab9ea635260d2b72f2e5",
   }
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -162,7 +161,7 @@ return packer.startup(function(use)
     event = { "VimEnter" },
     config = function()
       vim.defer_fn(function()
-        require("user.copilot")
+        require "user.copilot"
       end, 100)
     end,
   }
@@ -171,6 +170,9 @@ return packer.startup(function(use)
     module = "copilot_cmp",
   }
   use "RRethy/vim-illuminate"
+
+  -- Typescript TODO: set this up, also add keybinds to ftplugin
+  --use "jose-elias-alvarez/typescript.nvim"
 
   -- Java
   use "mfussenegger/nvim-jdtls"
