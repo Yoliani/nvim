@@ -21,5 +21,6 @@ null_ls.setup {
     formatting.stylua,
     formatting.google_java_format,
     formatting.rubocop,
+    formatting.erb_lint,
   },
 }

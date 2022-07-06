@@ -181,6 +181,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
+  use {'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim'}
   -- use "nvim-telescope/telescope-ui-select.nvim"
   -- use "nvim-telescope/telescope-file-browser.nvim"
 
@@ -204,12 +205,17 @@ return packer.startup(function(use)
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
   -- use "https://github.com/rhysd/conflict-marker.vim"
-
+  
+  -- TEST
   -- DAP
   -- use "mfussenegger/nvim-dap"
   -- use "theHamsta/nvim-dap-virtual-text"
   -- use "rcarriga/nvim-dap-ui"
   -- use "Pocco81/DAPInstall.nvim"
+  use 'vim-test/vim-test' 
+
+  -- MISC 
+  use {'glepnir/template.nvim'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
