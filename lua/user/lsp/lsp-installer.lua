@@ -20,6 +20,7 @@ local servers = {
   "rust_analyzer",
   "taplo",
   "solargraph",
+  --"sorbet",
   "eslint",
   "tailwindcss"
 }

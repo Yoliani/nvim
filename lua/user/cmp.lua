@@ -108,7 +108,7 @@ cmp.setup {
     { name = "copilot" },
     { name = "luasnip" },
     { name = "buffer" },
-    { name = "cmp_tabnine" },
+    --{ name = "cmp_tabnine" },
     { name = "path" },
     { name = "emoji" },
   },
