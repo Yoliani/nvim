@@ -99,6 +99,12 @@ return packer.startup(function(use)
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "olimorris/onedarkpro.nvim"
+  use 'shaunsingh/moonlight.nvim'
+  use 'shaunsingh/solarized.nvim'
+  use 'tjdevries/colorbuddy.nvim'
+  use 'navarasu/onedark.nvim'
+  use 'LunarVim/onedarker.nvim'
+  use 'svrana/neosolarized.nvim'
   -- use "rebelot/kanagawa.nvim"
   use "ellisonleao/gruvbox.nvim"
 
@@ -153,9 +159,16 @@ return packer.startup(function(use)
   use "b0o/SchemaStore.nvim"
   use {
     "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
-  -- use "github/copilot.vim"
+  use "github/copilot.vim"
   use {
     "zbirenbaum/copilot.lua",
     event = { "VimEnter" },
@@ -181,7 +194,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
-  use {'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim'}
+  use { 'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim' }
   -- use "nvim-telescope/telescope-ui-select.nvim"
   -- use "nvim-telescope/telescope-file-browser.nvim"
 
@@ -205,21 +218,40 @@ return packer.startup(function(use)
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
   -- use "https://github.com/rhysd/conflict-marker.vim"
-  
+
   -- TEST
   -- DAP
   -- use "mfussenegger/nvim-dap"
   -- use "theHamsta/nvim-dap-virtual-text"
   -- use "rcarriga/nvim-dap-ui"
   -- use "Pocco81/DAPInstall.nvim"
-  use 'vim-test/vim-test' 
+  use 'vim-test/vim-test'
 
-  -- MISC 
-  use {'glepnir/template.nvim'}
+  -- MISC
+  use { 'glepnir/template.nvim' }
   use {
     'numToStr/Comment.nvim',
   }
   use 'kazhala/close-buffers.nvim'
+  use { 'alexghergh/nvim-tmux-navigation', config = function()
+
+    local nvim_tmux_nav = require('nvim-tmux-navigation')
+
+    nvim_tmux_nav.setup {
+      disable_when_zoomed = true -- defaults to false
+    }
+
+    vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+    vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+    vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+    vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+    vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+    vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
+  end
+  }
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

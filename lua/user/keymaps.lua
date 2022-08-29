@@ -118,5 +118,5 @@ cmd(":command! Wq wq")
 cmd(":command! Wqa wqa")
 cmd(":command! W w")
 cmd(":command! Q q")
-keymap("n", "<Leader>fb", [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
+keymap("n", "<Leader>fB", [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opts)
 
