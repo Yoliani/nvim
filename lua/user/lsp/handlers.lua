@@ -94,7 +94,7 @@ M.on_attach = function(client, bufnr)
     if not status_cmp_ok then
       return
     end
-    M.capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    M.capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
     M.capabilities.textDocument.completion.completionItem.snippetSupport = true
     M.capabilities.textDocument.completion.completionItem.preselectSupport = true
     M.capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
@@ -126,7 +126,7 @@ M.on_attach = function(client, bufnr)
         },
       },
     }
-    M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+    M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
   else
     local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
     if not status_cmp_ok then
@@ -134,7 +134,7 @@ M.on_attach = function(client, bufnr)
     end
 
     M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-    M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+    M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
   end
 
   lsp_keymaps(bufnr)
